@@ -1,7 +1,10 @@
 defmodule Playa.ListenController do
   use Phoenix.Controller
 
-  def show(conn, %{"channel" => channel}) do
-    render conn, "listen", channel: channel
+  def index(conn, %{"channel" => channel}) do
+    render conn, "show", channel: channel
+  end
+  def index(conn, _params) do
+    render conn, "show", channel: "default"
   end
 end
