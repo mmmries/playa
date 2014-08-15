@@ -3,4 +3,5 @@ defmodule Playa.Router do
 
   plug Plug.Static, at: "/static", from: :playa
   get "/", Playa.PageController, :index, as: :page
+  get "/listen/:channel", ListenController, :show
 end
