@@ -16,10 +16,8 @@
 
     channel.on("play", function(message) {
       var a = document.createElement('audio');
+      a.setAttribute("src",message.url);
       a.setAttribute("autoplay",true);
-      var s = document.createElement('source');
-      s.setAttribute("src", message.url);
-      a.appendChild(s);
     });
   });
 </script>
