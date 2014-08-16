@@ -9,6 +9,7 @@
 
     <title>Hello Phoenix!</title>
     <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/phoenix.js"></script>
   </head>
 
   <body>

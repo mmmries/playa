@@ -1,0 +1,25 @@
+<h1>OHAI</h1>
+<h2><%= @playlist %></h2>
+
+<h4>http://www.largesound.com/ashborytour/sound/brobob.mp3</h4>
+
+<script>
+  var playlist = '<%= @playlist %>';
+  var socket = new Phoenix.Socket("ws://" + location.host + "/ws");
+
+  socket.join("songs", "a", {}, function(channel) {
+    window.channel = channel;
+
+    channel.on("ok", function(message) {
+      console.log(message);
+    });
+
+    channel.on("play", function(message) {
+      var a = document.createElement('audio');
+      a.setAttribute("autoplay",true);
+      var s = document.createElement('source');
+      s.setAttribute("src", message.url);
+      a.appendChild(s);
+    });
+  });
+</script>
