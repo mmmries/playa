@@ -2,19 +2,13 @@
 
 I want to play a song everytime code is deployed to production. I want the triggering mechanism to be as easy as possible.
 
-To test how easy it is just start the server and go listen to a playlist like this:
+How easy? Just [go to the app](http://mighty-spire-2684.herokuapp.com/listen/github-chan). And then trigger a song to be played:
 
 ```bash
-$ mix do deps.get, compile
-$ mix phoenix.start
+$ curl -X PUT http://mighty-spire-2684.herokuapp.com/play/github-chan -d url=http%3A%2F%2Fwww.noiseaddicts.com%2Fsamples%2F55.mp3
 ```
 
-Then in your browser go to http://localhost:4000/listen/my-awesome-playlist
-
-Finally send an HTTP request to the server like this:
-```bash
-$ curl -X PUT http://localhost:4000/play/my-awesome-playlist -d url=http%3A%2F%2Fwww.noiseaddicts.com%2Fsamples%2F55.mp3
-```
+Now I can just have my deploy script send a PUT request with a URL to whatever MP3 I want to play.
 
 ## Things Still To Do
 
