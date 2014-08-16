@@ -6,7 +6,9 @@ defmodule Playa.Supervisor do
   end
 
   def init([]) do
-    children = []
+    children = [
+      worker(Playa.Router, [], function: :start)
+    ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
