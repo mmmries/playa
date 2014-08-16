@@ -1,13 +1,10 @@
-<h1>OHAI</h1>
-<h2><%= @playlist %></h2>
-
-<h4>http://www.largesound.com/ashborytour/sound/brobob.mp3</h4>
+<h2>You are now listening to: <%= @playlist %></h2>
 
 <script>
   var playlist = '<%= @playlist %>';
   var socket = new Phoenix.Socket("ws://" + location.host + "/ws");
 
-  socket.join("songs", "a", {}, function(channel) {
+  socket.join("songs", playlist, {}, function(channel) {
     window.channel = channel;
 
     channel.on("ok", function(message) {
