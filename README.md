@@ -1,13 +1,23 @@
 # Playa
 
-To start your new Phoenix application you have to:
+I want to play a song everytime code is deployed to production. I want the triggering mechanism to be as easy as possible.
 
-1. Install dependencies with `mix deps.get`
-2. Start Phoenix router with `mix phoenix.start`
+To test how easy it is just start the server and go listen to a playlist like this:
 
-Now you can visit `localhost:4000` from your browser.
+```bash
+$ mix do deps.get, compile
+$ mix phoenix.start
+```
 
+Then in your browser go to http://localhost:4000/listen/my-awesome-playlist
 
-## Notes
+Finally send an HTTP request to the server like this:
+```bash
+$ curl -X PUT http://localhost:4000/play/my-awesome-playlist -d url=http%3A%2F%2Fwww.noiseaddicts.com%2Fsamples%2F55.mp3
+```
 
-* If you choose to change the application's structure, you could manually start the router from your code like this `Playa.Router.start`
+## Things Still To Do
+
+* Make a Landing Page
+* Custom layout
+* Deploy to a real server
