@@ -1,7 +1,7 @@
 use Mix.Config
 
 config :phoenix, Playa.Router,
-  port: System.get_env("PORT"),
+  port: 4000,
   ssl: false,
   host: "example.com",
   code_reload: false,
