@@ -5,10 +5,10 @@ I want to play a song everytime code is deployed to production. I want the trigg
 How easy? Just [go to the app](http://playa.riesd.com/listen/github-chan). And then trigger a song to be played:
 
 ```bash
-$ curl -X PUT http://playa.riesd.com/play/github-chan -d url=http%3A%2F%2Fwww.noiseaddicts.com%2Fsamples%2F55.mp3
+$ curl -X PUT http://playa.riesd.com/play/md -d '{"url":"http://www.moviesoundclips.net/download.php?id=4356&ft=mp3"}' -H 'Content-Type: application/json'
 ```
 
-Now I can just have my deploy script send a PUT request with a URL to whatever MP3 I want to play.
+Now my deploy script can just send a PUT request and make the music happen!
 
 ## Docker
 
