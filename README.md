@@ -5,7 +5,7 @@ I want to play a song everytime code is deployed to production. I want the trigg
 How easy? Just [go to the app](http://playa.riesd.com/listen/github-chan). And then trigger a song to be played:
 
 ```bash
-$ curl -X PUT http://playa.riesd.com/play/md -d '{"url":"http://www.moviesoundclips.net/download.php?id=4356&ft=mp3"}' -H 'Content-Type: application/json'
+$ curl -X PUT http://playa.riesd.com/play/github-chan -d '{"url":"http://www.moviesoundclips.net/download.php?id=4356&ft=mp3"}' -H 'Content-Type: application/json'
 ```
 
 Now my deploy script can just send a PUT request and make the music happen!
